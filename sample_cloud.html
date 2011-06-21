@@ -1,0 +1,48 @@
+<html>
+    <head>
+    <!-- Don't link to goat1000 site when doing your own tag clouds -->
+    <script src="http://www.goat1000.com/tagcanvas.min.js?1.7.1" type="text/javascript"></script>
+
+    <script type="text/javascript">
+            window.onload = function() {
+              try {
+                TagCanvas.Start('canvasId', 'linkContainer', {
+                    interval: 40,
+                    textFont: 'Impact,Arial Black,sans-serif',
+                    textColour: '#00f',
+                    textHeight: 25,
+                    outlineColour: '#60f',
+                    outlineThickness: 3,
+                    maxSpeed: 0.05,
+                    minBrightness: 0.1,
+                    depth: 0.92,
+                    pulsateTo: 0.2,
+                    pulsateTime: 0.5,
+                    initial: [0.1,-0.1],
+                    decel: 0.98,
+                    reverse: true,
+                    hideTags: true,
+                    shadow: '#ccf',
+                    shadowBlur: 3,
+                    weight: true,
+                    weightFrom: 'dataWeight',
+                    weightMode: 'both'
+                });
+            } catch(e) {
+                // in Internet Explorer there is no canvas!
+                document.getElementById('canvasId').style.display = 'none';
+            }
+      };
+      </script>
+  </head>
+  <body>
+
+    <canvas width="800" height="800" id="canvasId">     
+      <p>Anything in here will be replaced on browsers that support the canvas element</p>
+    </canvas>
+
+    <ul id="linkContainer">
+       <a href="#" dataWeight="100">mexico</a><br /><a href="#" dataWeight="94">revolution</a><br /><a href="#" dataWeight="94">villa</a><br /><a href="#" dataWeight="89">madero</a><br /><a href="#" dataWeight="88">d√</a><br /><a href="#" dataWeight="86">az</a><br /><a href="#" dataWeight="72">mexican</a><br /><a href="#" dataWeight="69">huerta</a><br /><a href="#" dataWeight="64">zapata</a><br /><a href="#" dataWeight="64">united</a><br /><a href="#" dataWeight="58">states</a><br /><a href="#" dataWeight="52">carranza</a><br /><a href="#" dataWeight="48">land</a><br /><a href="#" dataWeight="46">power</a><br /><a href="#" dataWeight="44">president</a><br /><a href="#" dataWeight="44">war</a><br /><a href="#" dataWeight="40">revolutionary</a><br /><a href="#" dataWeight="37">army</a><br /><a href="#" dataWeight="37">many</a><br /><a href="#" dataWeight="37">porfirio</a><br /><a href="#" dataWeight="37">government</a><br /><a href="#" dataWeight="35">1910</a><br /><a href="#" dataWeight="34">american</a><br /><a href="#" dataWeight="32">forces</a><br /><a href="#" dataWeight="32">people</a><br /><a href="#" dataWeight="32">general</a><br /><a href="#" dataWeight="32">edit</a><br /><a href="#" dataWeight="32">reform</a><br /><a href="#" dataWeight="31">leaders</a><br /><a href="#" dataWeight="31">wilson</a><br /><a href="#" dataWeight="31">francisco</a><br /><a href="#" dataWeight="29">pancho</a><br /><a href="#" dataWeight="29">support</a><br /><a href="#" dataWeight="29">also</a><br /><a href="#" dataWeight="29">women</a><br /><a href="#" dataWeight="27">zapatista</a><br /><a href="#" dataWeight="27">presidency</a><br /><a href="#" dataWeight="27">fought</a><br /><a href="#" dataWeight="27">election</a><br /><a href="#" dataWeight="27">city</a><br /><a href="#" dataWeight="27">1920</a><br /><a href="#" dataWeight="27">article</a><br /><a href="#" dataWeight="27">political</a><br /><a href="#" dataWeight="26">new</a><br /><a href="#" dataWeight="26">time</a><br /><a href="#" dataWeight="26">constitution</a><br /><a href="#" dataWeight="26">troops</a><br /><a href="#" dataWeight="26">emiliano</a><br /><a href="#" dataWeight="26">led</a><br /><a href="#" dataWeight="26">including</a>
+    </ul>
+  </body>
+</html>

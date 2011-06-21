@@ -1,0 +1,48 @@
+<html>
+    <head>
+    <!-- Don't link to goat1000 site when doing your own tag clouds -->
+    <script src="http://www.goat1000.com/tagcanvas.min.js?1.7.1" type="text/javascript"></script>
+
+    <script type="text/javascript">
+            window.onload = function() {
+              try {
+                TagCanvas.Start('$canvas_id', '$link_container', {
+                    interval: 40,
+                    textFont: 'Impact,Arial Black,sans-serif',
+                    textColour: '#00f',
+                    textHeight: 25,
+                    outlineColour: '#60f',
+                    outlineThickness: 3,
+                    maxSpeed: 0.05,
+                    minBrightness: 0.1,
+                    depth: 0.92,
+                    pulsateTo: 0.2,
+                    pulsateTime: 0.5,
+                    initial: [0.1,-0.1],
+                    decel: 0.98,
+                    reverse: true,
+                    hideTags: true,
+                    shadow: '#ccf',
+                    shadowBlur: 3,
+                    weight: true,
+                    weightFrom: 'dataWeight',
+                    weightMode: 'both'
+                });
+            } catch(e) {
+                // in Internet Explorer there is no canvas!
+                document.getElementById('$canvas_id').style.display = 'none';
+            }
+      };
+      </script>
+  </head>
+  <body>
+
+    <canvas width="$size" height="$size" id="$canvas_id">     
+      <p>Anything in here will be replaced on browsers that support the canvas element</p>
+    </canvas>
+
+    <ul id="$link_container">
+       $links
+    </ul>
+  </body>
+</html>
