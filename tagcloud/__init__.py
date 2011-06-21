@@ -1,6 +1,11 @@
 import os
 import string
 
+
+from tagcloud.lang.counter import get_tag_counts
+from tagcloud.font_size_mappers import linear_mapper, logarithmic_mapper
+
+
 def html_links_from_tags(tags, data_weight = 'dataWeight', top = 0):
     '''Creates a bunch of html links with the given tags
     

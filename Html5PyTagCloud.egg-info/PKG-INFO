@@ -1,0 +1,15 @@
+Metadata-Version: 1.0
+Name: Html5PyTagCloud
+Version: 0.1
+Summary: Html5PyTagcloud is aimed to provide an example on how to build a tag cloud using
+the html + javascript tagcloud from goat1000 (http://www.goat1000.com/).
+
+The tagcloud is created based on some given text, stop words are filtered using the lang package
+in PyTagCloud (https://github.com/atizo/PyTagCloud/).
+Home-page: http://github.com/rogeliorv/Html5PyTagCloud/
+Author: rogeliorv
+Author-email: UNKNOWN
+License: Creative Commons Attribution 3.0 Unported License
+Description: UNKNOWN
+Keywords: html5 javascript tagcloud PyTagCloud
+Platform: UNKNOWN
