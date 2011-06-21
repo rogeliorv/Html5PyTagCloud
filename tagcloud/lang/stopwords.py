@@ -1,5 +1,6 @@
 # -*- coding: utf-8 -*-
 import os
+import codecs
 
 ACTIVE_LISTS = ('german, french, italian, english, spanish')
 
@@ -16,7 +17,7 @@ class StopWords(object):
             for file in files:
                 if not file in ACTIVE_LISTS:
                     continue
-                stop_file = open(os.path.join(os.path.dirname(os.path.abspath(__file__)), 'stop/', file), 'r')                
+                stop_file = codecs.open(os.path.join(os.path.dirname(os.path.abspath(__file__)), 'stop/', file), 'r', 'utf-8')                
                 self.stop_words_lists[file] = []                
                 for stop_word in stop_file:
                     self.stop_words_lists[file].append(stop_word.strip().lower())

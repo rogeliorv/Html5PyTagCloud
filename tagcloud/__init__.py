@@ -4,7 +4,7 @@ import string
 
 from tagcloud.lang.counter import get_tag_counts
 from tagcloud.font_size_mappers import linear_mapper, logarithmic_mapper
-
+import codecs
 
 def html_links_from_tags(tags, data_weight = 'dataWeight', top = 0):
     '''Creates a bunch of html links with the given tags
@@ -24,7 +24,7 @@ def html_links_from_tags(tags, data_weight = 'dataWeight', top = 0):
     for tag, frequency, ref in tags[0:(top or len(tags))]:
         links.append(link_template % (ref, data_weight, frequency, tag))
                 
-    return '<br />'.join(links)
+    return '<br />\n'.join(links)
 
 
 def render_template_by_dicts(tags, links = None, outfile_name = 'sample_cloud.html',
@@ -50,11 +50,11 @@ def render_template_by_tuples(tags_tuples, outfile_name = 'sample_cloud.html', r
     links = html_links_from_tags(tags_tuples, top = top)
     
     render_conf['links'] = links
-    template_file = open(os.path.join(os.path.dirname(__file__),'docs', 'html5template.html'))
+    template_file = codecs.open(os.path.join(os.path.dirname(__file__),'docs', 'html5template.html'), 'r', 'utf-8')
     html_template = string.Template(template_file.read())
     template_file.close()
     # Write the output file
-    outfile = open(outfile_name, 'w')
+    outfile = codecs.open(outfile_name, 'w', 'utf-8')
     output = html_template.substitute(render_conf)
     outfile.write(output)
     outfile.close()
@@ -62,7 +62,7 @@ def render_template_by_tuples(tags_tuples, outfile_name = 'sample_cloud.html', r
     
 def sample_text():
     '''Load sample text from a file and return it as a string'''
-    sample_file = open(os.path.join(os.path.dirname(__file__), 'docs', 'sample_text.txt'))
+    sample_file = codecs.open(os.path.join(os.path.dirname(__file__), 'docs', 'sample_text.txt'), 'r', 'utf-8')
     text = sample_file.read()
     sample_file.close()
     return text
