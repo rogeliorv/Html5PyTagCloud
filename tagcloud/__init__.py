@@ -2,7 +2,7 @@ import os
 import string
 
 
-from tagcloud.lang.counter import get_tag_counts
+from tagcloud.lang.counter import get_tag_counts, sum_tag_counts
 from tagcloud.font_size_mappers import linear_mapper, logarithmic_mapper
 import codecs
 

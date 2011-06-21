@@ -1,6 +1,7 @@
 # -*- coding: utf-8 -*-
 import re
 from stopwords import StopWords
+from itertools import chain
 
 def get_tag_counts(text):
     """
@@ -22,3 +23,13 @@ def get_tag_counts(text):
                 counted[word] = 1
       
     return counted
+
+def sum_tag_counts(first, second):
+    '''Given to dictionaries with tags and frequencies, sums both and
+    returns the result.'''
+    result = {}
+    for tag in chain(first.keys(), second.keys()):
+        if tag not in result: result[tag] = first.get(tag, 0) + second.get(tag, 0)
+    return result
+    
+    
