@@ -13,9 +13,9 @@ setup(
     package_data = {
             # If any package contains *.txt or *.rst files, include them:
             '': ['*.txt', '*.html', '*.js'],
-            # And include any *.msg files found in the 'hello' package, too:
-            'tagcloud.lang.stop': ['*'],
-        },
+            'tagcloud.lang': ['stop/*']
+    },
+      
       
     # metadata for upload to PyPI
     author = "rogeliorv",

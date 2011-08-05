@@ -25,11 +25,12 @@ def linear_mapper(tags, min_font_size = 10, max_font_size = 60):
     '''Given a dict with tags and their frequency. Returns a map with tags and the suggested
     font size'''
     mapping = {}
-    min_frequency, max_frequency = minmax(tags.values())
-    
-    for tag, frequency in tags.items():
-        mapping[tag] = linear_mapping_size(frequency, min_frequency, max_frequency,
-                                           min_font_size, max_font_size)
+    if tags:
+        min_frequency, max_frequency = minmax(tags.values())
+        
+        for tag, frequency in tags.items():
+            mapping[tag] = linear_mapping_size(frequency, min_frequency, max_frequency,
+                                               min_font_size, max_font_size)
     return mapping
     
     
@@ -44,11 +45,12 @@ def linear_mapping_size(frequency, min_frequency, max_frequency,
 
 def logarithmic_mapper(tags, min_font_size = 12, max_font_size = 100):
     mapping = {}
-    min_frequency, max_frequency = minmax(tags.values())
-    
-    for tag, frequency in tags.items():
-        mapping[tag] = linear_mapping_size(frequency, min_frequency, max_frequency,
-                                           min_font_size, max_font_size)
+    if tags:
+        min_frequency, max_frequency = minmax(tags.values())
+        
+        for tag, frequency in tags.items():
+            mapping[tag] = linear_mapping_size(frequency, min_frequency, max_frequency,
+                                               min_font_size, max_font_size)
     return mapping
 
 

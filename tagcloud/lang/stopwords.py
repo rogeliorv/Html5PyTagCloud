@@ -31,7 +31,7 @@ class StopWords(object):
             raise LookupError("No language loaded")
         return word in self.stop_words_lists[self.language]
     
-    def guess(self, words):
+    def guess(self, words, default='english'):
         currentWinner = None;
         currentMax = 0;
         
@@ -45,5 +45,5 @@ class StopWords(object):
                 currentWinner = language
                 currentMax = count
         
-        return currentWinner
+        return currentWinner or default
     
